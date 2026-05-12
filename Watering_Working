@@ -1,0 +1,31 @@
+while(True):
+	for i in range (get_world_size()):
+		move(West)
+		for j in range (get_world_size()):
+			if(j == 0):
+				if(can_harvest() == True):
+					harvest()
+				if(get_water() < 0.5 and num_items(Items.Water)>0 ):
+					use_item(Items.Water)
+				plant(Entities.Grass)
+			if(j == 1):
+				if(can_harvest() == True):
+					harvest()
+				plant(Entities.Bush)
+				if(get_water() < 0.5 and num_items(Items.Water)>0 ):
+					use_item(Items.Water)
+			if(j == 2):
+				if(can_harvest() == True):
+					harvest()
+				if get_ground_type() != Grounds.Soil:
+					till()
+				plant(Entities.Carrot)
+				if(get_water() < 0.5 and num_items(Items.Water)>0 ):
+					use_item(Items.Water)
+			if(j == 3):
+				if(can_harvest() == True):
+					harvest()
+				plant(Entities.Bush)
+				if(get_water() < 0.5 and num_items(Items.Water)>0 ):
+					use_item(Items.Water)
+			move(North)

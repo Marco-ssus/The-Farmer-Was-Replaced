@@ -1,0 +1,31 @@
+
+
+from functions import  plant_pumpkin, plant_carrot, plant_bush, plant_grass, plant_sunflower
+
+
+while(True):
+	for i in range (0, 2):
+		move(West)
+		for j in range (get_world_size()):
+			plant_sunflower()
+			move(North)
+	for i in range (2, get_world_size()):
+		move(West)
+		for j in range (get_world_size()):
+			if(j == 0):
+				plant_pumpkin()
+			if(j == 1):
+				plant_pumpkin()
+			if(j == 2):
+				plant_pumpkin()
+			if(j == 3):
+				plant_bush()
+			if(j == 4):
+				plant_grass()
+			if(j == 5):
+				plant_carrot()
+			if(j == 6):
+				plant_carrot()
+			if(j == 7):
+				plant_bush()
+			move(North)

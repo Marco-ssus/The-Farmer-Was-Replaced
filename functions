@@ -1,0 +1,45 @@
+def plant_pumpkin():
+	if get_ground_type() != Grounds.Soil:
+					till()
+	if(get_entity_type() == Entities.Dead_Pumpkin):
+		harvest()
+		plant(Entities.Pumpkin)
+	else:
+		if(can_harvest() == True):
+			harvest()
+	if(get_water() < 0.5 and num_items(Items.Water)>0 ):
+		use_item(Items.Water)
+	plant(Entities.Pumpkin)
+	
+def plant_carrot():
+	if(can_harvest() == True):
+		harvest()
+	if get_ground_type() != Grounds.Soil:
+		till()
+	plant(Entities.Carrot)
+	if(get_water() < 0.5 and num_items(Items.Water)>0 ):
+		use_item(Items.Water)
+		
+def plant_bush():
+	if(can_harvest() == True):
+		harvest()
+	plant(Entities.Bush)
+	if(get_water() < 0.5 and num_items(Items.Water)>0 ):
+		use_item(Items.Water)
+		
+def plant_grass():
+	if(can_harvest() == True):
+		harvest()
+	if(get_water() < 0.5 and num_items(Items.Water)>0 ):
+		use_item(Items.Water)
+	plant(Entities.Grass)
+	
+def plant_sunflower():
+	if(can_harvest() == True):
+		harvest()
+	if get_ground_type() != Grounds.Soil:
+		till()
+	plant(Entities.Sunflower)
+	if(get_water() < 0.5 and num_items(Items.Water)>0 ):
+		use_item(Items.Water)
+		
